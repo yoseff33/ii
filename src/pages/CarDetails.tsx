@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { 
@@ -36,9 +37,9 @@ const CarDetails: React.FC = () => {
     model: 'Camry 2023',
     year: 2023,
     images: [
-https://www.thaqfny.com/wp-content/uploads/2021/08/%D9%83%D8%A7%D9%85%D8%B1%D9%8A-2022.jpg
-https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAhv-dTd_58tCHmO_XCNjyrW0VrZ0iL0qAxw&s
-https://www.thaqfny.com/wp-content/uploads/2022/10/out_62c59534de26f1657115956.jpg
+      'https://images.pexels.com/photos/116675/pexels-photo-116675.jpeg?auto=compress&cs=tinysrgb&w=800',
+      'https://images.pexels.com/photos/1592384/pexels-photo-1592384.jpeg?auto=compress&cs=tinysrgb&w=800',
+      'https://images.pexels.com/photos/712618/pexels-photo-712618.jpeg?auto=compress&cs=tinysrgb&w=800',
       'https://images.pexels.com/photos/1209778/pexels-photo-1209778.jpeg?auto=compress&cs=tinysrgb&w=800',
     ],
     pricePerHour: 25,
@@ -72,7 +73,7 @@ https://www.thaqfny.com/wp-content/uploads/2022/10/out_62c59534de26f1657115956.j
     fuel: language === 'ar' ? 'بنزين' : 'Gasoline',
     seats: 5,
     description: language === 'ar' 
-      ? 'سيارة تويوتا كامري 2023 في حالة ممتازة، مناسبة للرحلات الطويلة والقصيرة. السيارة نظيفة ومعتنى بها جيداً مع صيانة دورية منتظمة.'
+‎      ? 'سيارة تويوتا كامري 2023 في حالة ممتازة، مناسبة للرحلات الطويلة والقصيرة. السيارة نظيفة ومعتنى بها جيداً مع صيانة دورية منتظمة.'
       : 'Toyota Camry 2023 in excellent condition, suitable for long and short trips. The car is clean and well-maintained with regular periodic maintenance.',
     rules: [
       language === 'ar' ? 'ممنوع التدخين' : 'No smoking',
@@ -89,7 +90,7 @@ https://www.thaqfny.com/wp-content/uploads/2022/10/out_62c59534de26f1657115956.j
       rating: 5,
       date: '2024-01-15',
       comment: language === 'ar' 
-        ? 'سيارة ممتازة ونظيفة، المالك متعاون جداً. أنصح بها بشدة!'
+‎        ? 'سيارة ممتازة ونظيفة، المالك متعاون جداً. أنصح بها بشدة!'
         : 'Excellent and clean car, very cooperative owner. Highly recommended!'
     },
     {
@@ -98,7 +99,7 @@ https://www.thaqfny.com/wp-content/uploads/2022/10/out_62c59534de26f1657115956.j
       rating: 5,
       date: '2024-01-10',
       comment: language === 'ar'
-        ? 'تجربة رائعة، السيارة كما هو موضح في الصور تماماً.'
+‎        ? 'تجربة رائعة، السيارة كما هو موضح في الصور تماماً.'
         : 'Great experience, the car is exactly as shown in the pictures.'
     },
     {
@@ -107,7 +108,7 @@ https://www.thaqfny.com/wp-content/uploads/2022/10/out_62c59534de26f1657115956.j
       rating: 4,
       date: '2024-01-05',
       comment: language === 'ar'
-        ? 'سيارة جيدة ومريحة، لكن كان هناك تأخير بسيط في التسليم.'
+‎        ? 'سيارة جيدة ومريحة، لكن كان هناك تأخير بسيط في التسليم.'
         : 'Good and comfortable car, but there was a slight delay in delivery.'
     }
   ];
@@ -470,7 +471,7 @@ https://www.thaqfny.com/wp-content/uploads/2022/10/out_62c59534de26f1657115956.j
                 </div>
                 <p className="text-sm text-blue-700">
                   {language === 'ar' 
-                    ? 'السيارة مؤمنة بالكامل ضد الحوادث والأضرار'
+‎                    ? 'السيارة مؤمنة بالكامل ضد الحوادث والأضرار'
                     : 'Car is fully insured against accidents and damages'
                   }
                 </p>
@@ -489,7 +490,7 @@ https://www.thaqfny.com/wp-content/uploads/2022/10/out_62c59534de26f1657115956.j
 
               <p className="text-xs text-gray-500 text-center">
                 {language === 'ar' 
-                  ? 'لن يتم خصم أي مبلغ حتى تأكيد الحجز'
+‎                  ? 'لن يتم خصم أي مبلغ حتى تأكيد الحجز'
                   : 'No charge until booking is confirmed'
                 }
               </p>
