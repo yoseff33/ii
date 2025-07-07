@@ -73,7 +73,7 @@ const CarDetails: React.FC = () => {
     fuel: language === 'ar' ? 'بنزين' : 'Gasoline',
     seats: 5,
     description: language === 'ar' 
-‎      ? 'سيارة تويوتا كامري 2023 في حالة ممتازة، مناسبة للرحلات الطويلة والقصيرة. السيارة نظيفة ومعتنى بها جيداً مع صيانة دورية منتظمة.'
+      ? 'سيارة تويوتا كامري 2023 في حالة ممتازة، مناسبة للرحلات الطويلة والقصيرة. السيارة نظيفة ومعتنى بها جيداً مع صيانة دورية منتظمة.'
       : 'Toyota Camry 2023 in excellent condition, suitable for long and short trips. The car is clean and well-maintained with regular periodic maintenance.',
     rules: [
       language === 'ar' ? 'ممنوع التدخين' : 'No smoking',
@@ -90,7 +90,7 @@ const CarDetails: React.FC = () => {
       rating: 5,
       date: '2024-01-15',
       comment: language === 'ar' 
-‎        ? 'سيارة ممتازة ونظيفة، المالك متعاون جداً. أنصح بها بشدة!'
+        ? 'سيارة ممتازة ونظيفة، المالك متعاون جداً. أنصح بها بشدة!'
         : 'Excellent and clean car, very cooperative owner. Highly recommended!'
     },
     {
@@ -99,7 +99,7 @@ const CarDetails: React.FC = () => {
       rating: 5,
       date: '2024-01-10',
       comment: language === 'ar'
-‎        ? 'تجربة رائعة، السيارة كما هو موضح في الصور تماماً.'
+        ? 'تجربة رائعة، السيارة كما هو موضح في الصور تماماً.'
         : 'Great experience, the car is exactly as shown in the pictures.'
     },
     {
@@ -108,7 +108,7 @@ const CarDetails: React.FC = () => {
       rating: 4,
       date: '2024-01-05',
       comment: language === 'ar'
-‎        ? 'سيارة جيدة ومريحة، لكن كان هناك تأخير بسيط في التسليم.'
+        ? 'سيارة جيدة ومريحة، لكن كان هناك تأخير بسيط في التسليم.'
         : 'Good and comfortable car, but there was a slight delay in delivery.'
     }
   ];
@@ -471,7 +471,7 @@ const CarDetails: React.FC = () => {
                 </div>
                 <p className="text-sm text-blue-700">
                   {language === 'ar' 
-‎                    ? 'السيارة مؤمنة بالكامل ضد الحوادث والأضرار'
+                    ? 'السيارة مؤمنة بالكامل ضد الحوادث والأضرار'
                     : 'Car is fully insured against accidents and damages'
                   }
                 </p>
@@ -490,7 +490,7 @@ const CarDetails: React.FC = () => {
 
               <p className="text-xs text-gray-500 text-center">
                 {language === 'ar' 
-‎                  ? 'لن يتم خصم أي مبلغ حتى تأكيد الحجز'
+                  ? 'لن يتم خصم أي مبلغ حتى تأكيد الحجز'
                   : 'No charge until booking is confirmed'
                 }
               </p>
