@@ -12,9 +12,15 @@ import {
   Shield
 } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
+import { useUser } from '../contexts/UserContext';
+import { useToast } from '../components/NotificationToast';
+import { useNavigate } from 'react-router-dom';
 
 const Auth: React.FC = () => {
   const { language } = useLanguage();
+  const { login } = useUser();
+  const { showToast } = useToast();
+  const navigate = useNavigate();
   const [isLogin, setIsLogin] = useState(true);
   const [userType, setUserType] = useState<'renter' | 'owner'>('renter');
   const [showPassword, setShowPassword] = useState(false);
@@ -34,7 +40,27 @@ const Auth: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (isLogin) {
-      alert(language === 'ar' ? 'تم تسجيل الدخول بنجاح!' : 'Login successful!');
+      // Mock login - in real app, this would authenticate with backend
+      const mockUser = {
+        id: '1',
+        name: formData.name || (language === 'ar' ? 'مستخدم تجريبي' : 'Demo User'),
+        email: formData.email,
+        phone: formData.phone,
+        type: userType,
+        rating: 4.8,
+        totalTrips: 25,
+        joinDate: '2023',
+        verified: true,
+        points: 1250,
+        level: language === 'ar' ? 'فضي' : 'Silver'
+      };
+      
+      login(mockUser);
+      showToast('success', 
+        language === 'ar' ? 'تم تسجيل الدخول' : 'Login Successful',
+        language === 'ar' ? 'مرحباً بك في وُجْهَة' : 'Welcome to Wujha'
+      );
+      navigate('/dashboard');
     } else {
       if (formData.password !== formData.confirmPassword) {
         alert(language === 'ar' ? 'كلمات المرور غير متطابقة' : 'Passwords do not match');
@@ -44,7 +70,27 @@ const Auth: React.FC = () => {
         alert(language === 'ar' ? 'يجب الموافقة على الشروط والأحكام' : 'You must agree to terms and conditions');
         return;
       }
-      alert(language === 'ar' ? 'تم إنشاء الحساب بنجاح!' : 'Account created successfully!');
+      
+      const newUser = {
+        id: Math.random().toString(36).substr(2, 9),
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        type: userType,
+        rating: 0,
+        totalTrips: 0,
+        joinDate: new Date().getFullYear().toString(),
+        verified: false,
+        points: 100, // Welcome bonus
+        level: language === 'ar' ? 'برونزي' : 'Bronze'
+      };
+      
+      login(newUser);
+      showToast('success', 
+        language === 'ar' ? 'تم إنشاء الحساب' : 'Account Created',
+        language === 'ar' ? 'مرحباً بك في وُجْهَة' : 'Welcome to Wujha'
+      );
+      navigate('/dashboard');
     }
   };
 

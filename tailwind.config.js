@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  darkMode: 'class',
   theme: {
     extend: {
       fontFamily: {
@@ -93,5 +94,9 @@ export default {
     'bg-green-100',
     'bg-green-600',
     'text-green-600',
+    'bg-yellow-50',
+    'bg-yellow-100',
+    'bg-yellow-600',
+    'text-yellow-600',
   ],
 };

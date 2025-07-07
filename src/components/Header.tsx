@@ -2,11 +2,15 @@ import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Car, Menu, X, Globe, User } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
+import { useUser } from '../contexts/UserContext';
+import { useTheme } from '../contexts/ThemeContext';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
   const { language, setLanguage, t, isRTL } = useLanguage();
+  const { user, isLoggedIn, logout } = useUser();
+  const { isDark } = useTheme();
 
   const toggleLanguage = () => {
     setLanguage(language === 'ar' ? 'en' : 'ar');
@@ -77,13 +81,31 @@ const Header: React.FC = () => {
             </Link>
 
             {/* Auth Button */}
-            <Link
-              to="/auth"
-              className="hidden md:flex items-center space-x-2 rtl:space-x-reverse px-4 py-2 text-gray-700 hover:text-teal-600 hover:bg-teal-50 rounded-lg transition-colors"
-            >
-              <User className="w-4 h-4" />
-              <span className="text-sm">{t('nav.login')}</span>
-            </Link>
+            {isLoggedIn ? (
+              <div className="hidden md:flex items-center space-x-4 rtl:space-x-reverse">
+                <Link
+                  to="/dashboard"
+                  className="flex items-center space-x-2 rtl:space-x-reverse px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-teal-600 hover:bg-teal-50 dark:hover:bg-teal-900/20 rounded-lg transition-colors"
+                >
+                  <User className="w-4 h-4" />
+                  <span className="text-sm">{user?.name}</span>
+                </Link>
+                <button
+                  onClick={logout}
+                  className="text-sm text-gray-600 dark:text-gray-400 hover:text-red-600 transition-colors"
+                >
+                  {language === 'ar' ? 'تسجيل خروج' : 'Logout'}
+                </button>
+              </div>
+            ) : (
+              <Link
+                to="/auth"
+                className="hidden md:flex items-center space-x-2 rtl:space-x-reverse px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-teal-600 hover:bg-teal-50 dark:hover:bg-teal-900/20 rounded-lg transition-colors"
+              >
+                <User className="w-4 h-4" />
+                <span className="text-sm">{t('nav.login')}</span>
+              </Link>
+            )}
 
             {/* Mobile menu button */}
             <button
@@ -98,7 +120,7 @@ const Header: React.FC = () => {
 
       {/* Mobile Navigation */}
       {isMenuOpen && (
-        <div className="lg:hidden border-t border-gray-200 bg-white shadow-lg">
+        <div className="lg:hidden border-t border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 shadow-lg">
           <div className="px-4 pt-2 pb-3 space-y-1">
             {navItems.map((item) => (
               <Link
@@ -107,29 +129,52 @@ const Header: React.FC = () => {
                 onClick={() => setIsMenuOpen(false)}
                 className={`block px-3 py-2 text-base font-medium rounded-md transition-colors ${
                   isActive(item.path)
-                    ? 'text-teal-600 bg-teal-50'
-                    : 'text-gray-700 hover:text-teal-600 hover:bg-teal-50'
+                    ? 'text-teal-600 bg-teal-50 dark:bg-teal-900/20'
+                    : 'text-gray-700 dark:text-gray-300 hover:text-teal-600 hover:bg-teal-50 dark:hover:bg-teal-900/20'
                 }`}
               >
                 {item.label}
               </Link>
             ))}
             
-            <div className="pt-4 border-t border-gray-200 space-y-2">
-              <Link
-                to="/list-car"
-                onClick={() => setIsMenuOpen(false)}
-                className="block w-full text-center btn-secondary"
-              >
-                {t('nav.listCar')}
-              </Link>
-              <Link
-                to="/auth"
-                onClick={() => setIsMenuOpen(false)}
-                className="block w-full text-center btn-outline"
-              >
-                {t('nav.login')}
-              </Link>
+            <div className="pt-4 border-t border-gray-200 dark:border-gray-700 space-y-2">
+              {!isLoggedIn && (
+                <Link
+                  to="/list-car"
+                  onClick={() => setIsMenuOpen(false)}
+                  className="block w-full text-center btn-secondary"
+                >
+                  {t('nav.listCar')}
+                </Link>
+              )}
+              {isLoggedIn ? (
+                <>
+                  <Link
+                    to="/dashboard"
+                    onClick={() => setIsMenuOpen(false)}
+                    className="block w-full text-center btn-primary"
+                  >
+                    {language === 'ar' ? 'لوحة التحكم' : 'Dashboard'}
+                  </Link>
+                  <button
+                    onClick={() => {
+                      logout();
+                      setIsMenuOpen(false);
+                    }}
+                    className="block w-full text-center btn-outline"
+                  >
+                    {language === 'ar' ? 'تسجيل خروج' : 'Logout'}
+                  </button>
+                </>
+              ) : (
+                <Link
+                  to="/auth"
+                  onClick={() => setIsMenuOpen(false)}
+                  className="block w-full text-center btn-outline"
+                >
+                  {t('nav.login')}
+                </Link>
+              )}
             </div>
           </div>
         </div>
