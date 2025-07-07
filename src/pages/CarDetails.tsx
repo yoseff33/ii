@@ -36,9 +36,9 @@ const CarDetails: React.FC = () => {
     model: 'Camry 2023',
     year: 2023,
     images: [
-      'https://images.pexels.com/photos/116675/pexels-photo-116675.jpeg?auto=compress&cs=tinysrgb&w=800',
-      'https://images.pexels.com/photos/1592384/pexels-photo-1592384.jpeg?auto=compress&cs=tinysrgb&w=800',
-      'https://images.pexels.com/photos/712618/pexels-photo-712618.jpeg?auto=compress&cs=tinysrgb&w=800',
+https://www.thaqfny.com/wp-content/uploads/2021/08/%D9%83%D8%A7%D9%85%D8%B1%D9%8A-2022.jpg
+https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAhv-dTd_58tCHmO_XCNjyrW0VrZ0iL0qAxw&s
+https://www.thaqfny.com/wp-content/uploads/2022/10/out_62c59534de26f1657115956.jpg
       'https://images.pexels.com/photos/1209778/pexels-photo-1209778.jpeg?auto=compress&cs=tinysrgb&w=800',
     ],
     pricePerHour: 25,
