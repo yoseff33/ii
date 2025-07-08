@@ -62,7 +62,7 @@ const BrowseCars: React.FC = () => {
       name: language === 'ar' ? 'هوندا أكورد' : 'Honda Accord',
       model: 'Accord 2022',
       year: 2022,
-      image: 'https://images.pexels.com/photos/712618/pexels-photo-712618.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: 'https://arabgt.com/wp-content/uploads/2021/12/%D9%87%D9%88%D9%86%D8%AF%D8%A7-%D8%A7%D9%83%D9%88%D8%B1%D8%AF-2022-17.jpg',
       pricePerHour: 22,
       pricePerDay: 160,
       pricePerMonth: 4200,
