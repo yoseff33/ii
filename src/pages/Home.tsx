@@ -23,7 +23,7 @@ const Home: React.FC = () => {
       name: language === 'ar' ? 'تويوتا كامري' : 'Toyota Camry',
       model: 'Camry 2023',
       year: 2023,
-      image: 'https://images.pexels.com/photos/116675/pexels-photo-116675.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: 'https://images.pexels.com/photos/1592384/pexels-photo-1592384.jpeg?auto=compress&cs=tinysrgb&w=800',
       pricePerDay: 180,
       location: language === 'ar' ? 'الرياض - حي النخيل' : 'Riyadh - Al Nakheel',
       distance: 2.3,
