@@ -30,7 +30,7 @@ const BrowseCars: React.FC = () => {
       name: language === 'ar' ? 'تويوتا كامري' : 'Toyota Camry',
       model: 'Camry 2023',
       year: 2023,
-      image: 'https://images.pexels.com/photos/116675/pexels-photo-116675.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: 'https://tse2.mm.bing.net/th/id/OIP.EaNOG-N273XnQ3J3edyf1QHaEK?rs=1&pid=ImgDetMain&o=7&rm=3',
       pricePerHour: 25,
       pricePerDay: 180,
       pricePerMonth: 4500,

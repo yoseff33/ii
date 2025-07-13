@@ -46,7 +46,7 @@ const OwnerDashboard: React.FC = () => {
       bookings: 12,
       rating: 4.8,
       earnings: 2400,
-      image: 'https://images.pexels.com/photos/116675/pexels-photo-116675.jpeg?auto=compress&cs=tinysrgb&w=300'
+      image: 'https://tse2.mm.bing.net/th/id/OIP.EaNOG-N273XnQ3J3edyf1QHaEK?rs=1&pid=ImgDetMain&o=7&rm=3'
     },
     {
       id: '2',

@@ -37,7 +37,7 @@ const CarDetails: React.FC = () => {
     model: 'Camry 2023',
     year: 2023,
     images: [
-      'https://images.pexels.com/photos/116675/pexels-photo-116675.jpeg?auto=compress&cs=tinysrgb&w=800',
+      'https://tse2.mm.bing.net/th/id/OIP.EaNOG-N273XnQ3J3edyf1QHaEK?rs=1&pid=ImgDetMain&o=7&rm=3',
       'https://images.pexels.com/photos/1592384/pexels-photo-1592384.jpeg?auto=compress&cs=tinysrgb&w=800',
       'https://images.pexels.com/photos/712618/pexels-photo-712618.jpeg?auto=compress&cs=tinysrgb&w=800',
       'https://images.pexels.com/photos/1209778/pexels-photo-1209778.jpeg?auto=compress&cs=tinysrgb&w=800',
